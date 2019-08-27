@@ -5,7 +5,7 @@
  * Plugin Name:       Kntnt Advanced Custom Field Option Page For Site Colors
  * Plugin URI:        https://www.kntnt.com/
  * Description:       Allows ACF to add site color settings to the Apperence menu.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-3.0+
@@ -15,8 +15,7 @@
 defined( 'ABSPATH' ) || die;
 
 add_action( 'acf/init', function () {
-
-	acf_add_options_page( [
+	acf_add_options_sub_page( [
 		'parent_slug' => 'themes.php',
 		'menu_slug' => 'theme-color-scheme',
 		'menu_title' => __( 'Color Scheme', 'kntnt-acf-option-site-colors' ),
@@ -24,7 +23,4 @@ add_action( 'acf/init', function () {
 		'capability' => 'edit_theme_options',
 		'redirect' => false,
 	] );
-
 } );
-
-
